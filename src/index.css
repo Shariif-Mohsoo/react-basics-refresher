@@ -1,36 +1,27 @@
 *,
 *::before,
-*::after
-{
+*::after {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
 }
 
-
- html
-{
-  /* 1rem should be 10px instead of 16px */
-  font-size: 62.5%; 
-} 
-
-:root
-{
+:root {
   min-height: 100vh;
-  font-family: 'Times New Roman', Times, serif;
-  font-size: 1.6rem;
-  line-height: 2.4rem;
+  font-family: "Times New Roman", Times, serif;
+  font-size: 16px;
+  line-height: 24px;
   font-weight: 400;
-  background-image: radial-gradient(ellipse at top left,#7f50e4,#7233fa);
+  background-image: radial-gradient(ellipse at top left, #7f50e4, #7233fa);
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  -webkit-text-sizing-ajdust:100%;
+  -webkit-text-sizing-ajdust: 100%;
 }
-body
-{
+
+body {
   margin: 0;
-  text-align: center;
+  /* text-align: center; */
   color: #e6ddf9;
 }
