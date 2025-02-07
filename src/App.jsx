@@ -1,10 +1,11 @@
+import PostsList from "./components/PostsList";
+
 const App = () => {
   return (
-    <>
-    <div><marquee  direction="right">Mohsin</marquee></div>
-    <h1>Hello Mohsoo</h1>
-    </>
-  )
-}
+    <main>
+      <PostsList />
+    </main>
+  );
+};
 
-export default App
+export default App;
