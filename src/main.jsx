@@ -1,11 +1,39 @@
 import { createRoot } from "react-dom/client";
 
+import { RouterProvider, createBrowserRouter } from "react-router-dom";
 
-import App from './App';
-import './index.css';
+import RootLayout from "./routes/RootLayout";
+import Posts, { loader as postsLoader } from "./routes/Posts";
+import NewPost, { action as newPostAction } from "./routes/NewPost";
+import PostDetails, { loader as postDetailsLoader } from "./routes/PostDetails";
 
-createRoot(
-  document.getElementById('root')).render(<App/>);
+import "./index.css";
 
+// route configration
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <RootLayout />,
+    children: [
+      {
+        path: "/",
+        element: <Posts />,
+        loader: postsLoader,
+        children: [
+          { path: "/create-post", element: <NewPost />, action: newPostAction },
+          {
+            path: "/:postId",
+            element: <PostDetails />,
+            loader: postDetailsLoader,
+          },
+        ],
+      },
+    ],
+  },
+]);
 
-  // main entry point of entire application is this file.
+createRoot(document.getElementById("root")).render(
+  <RouterProvider router={router} />
+);
+
+// main entry point of entire application is this file.
